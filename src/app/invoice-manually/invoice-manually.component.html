@@ -1,0 +1,196 @@
+
+
+ <div class="container" #pdfContent>
+    <div *ngIf="!invoiceGenerated" class="details">
+        <div class="input-section">
+            <h2>Enter Details</h2>
+            <div class="user-details">
+                <div class="user-profile">
+                    <label for="profileImage">Customer Image:</label>
+                    <input type="file" id="profileImage" accept="image/*" (change)="onImageSelected($event)">
+                    <img *ngIf="user.profileImageUrl" [src]="user.profileImageUrl" alt="Customer Image">
+                </div>
+                <h3>User Details</h3>
+                <label>
+                    Name:
+                    <input list="userName" [(ngModel)]="user.name">
+                    <datalist id="userName">
+                        <option value="Abu Bakar">
+                        <option value="Muhammad Azam">
+                        <option value="Hamza Sabir">
+                        <option value="Bilal Sabir">
+                        <option value="Fahad">
+                        <option value="Muhammad Khushi">
+                        <option value="Muhammad Afzal">
+                    </datalist>
+                </label>
+                <label>
+                    Phone No:
+                    <input list="phoneNumbers" [(ngModel)]="user.phoneNo" (input)="onPhoneNumberSelected($event)">
+                    <datalist id="phoneNumbers">
+                        <option value="3025475680-AbuBakar">
+                        <option value="3166432640-Muhammad Khushi">
+                        <option value="3268769570-bilal">
+                        <option value="3030136849-fahad">
+                        <option value="3269674348-hamza">
+                        <option value="3297964444-azam">
+                        <option value="3297964952-afzal"></option>
+                    </datalist>
+                </label>
+                <label>
+                    Email :
+                    <input list="emailSection" [(ngModel)]="user.email">
+                    <datalist id="emailSection">
+                        <option value="Abubakar.dev@pk.see.biz">
+                        <option value="Khushi.dev@pk.see.biz">
+                        <option value="bilal.dev@pk.see.biz">
+                        <option value="fahad.dev@pk.see.biz">
+                        <option value="hamza.dev@pk.see.biz">
+                        <option value="azam.dev@pk.see.biz">
+                        <option value="afzal.dev@pk.see.biz">
+                    </datalist>
+                </label>
+                <label>Address: <input type="text" [(ngModel)]="user.address"></label>
+            </div>
+            <div class="payment-details">
+                <h3>Payment Details</h3>
+                <label>Issue Date: <input type="date" [(ngModel)]="payment.issueDate"></label>
+                <label>Last Date: <input type="date" [(ngModel)]="payment.lastDate"></label>
+                <label>Total Amount: <input type="number" [(ngModel)]="payment.amountDue"></label>
+                <label>Late Fee: <input type="number" [(ngModel)]="payment.lateFee"></label>
+            </div>
+            <button (click)="generateInvoice()">Generate Invoice</button>
+        </div>
+    </div>
+    <!-- <ng-container *ngIf="invoiceGenerated">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-container> -->
+    <body *ngIf="invoiceGenerated">
+        <div class="containewr">
+            <div class="banner">
+                  <img src="../../assets/images/4G-Home-Internet-02-scaled.webp" alt="banner">
+                  <div class="jugad"></div>
+            </div>
+            <div class="profile">
+                <img *ngIf="user.profileImageUrl" [src]="user.profileImageUrl" alt="Customer Image" crossOrigin="anonymous">
+            </div>
+            <div class="details">
+                <div class="user-details">
+                    <h2><b>User Details</b></h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ user.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone No</th>
+                            <td>+92{{ user.phoneNo }}</td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>{{ user.address }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="payment-details">
+                    <h2><b>Payment Details</b></h2>
+                    <table>
+                        <tr>
+                            <th>Issue Date</th>
+                            <td>{{ formatDate(payment.issueDate) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Date</th>
+                            <td>{{ formatDate(payment.lastDate) }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Amount</th>
+                            <td>Rs {{ payment.amountDue }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="late-payment">
+                <h2 style="text-align: center;"><b>Payable Amount After Last Date</b> <i class="fas fa-exclamation-triangle"></i></h2>
+                <table>
+                    <tr>
+                        <th>Late Fee</th>
+                        <td>Rs {{ payment.lateFee }}</td>
+                    </tr>
+                    <tr>
+                        <th>Total Payable</th>
+                        <td>Rs {{ payment.amountDue + payment.lateFee }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="body-content">
+                <div class="account-info">
+                    <div class="account-header">
+                        <h1><b style="font-size: 27px;">Smart Payment Solutions</b></h1>
+
+                    </div>
+                    <div class="account-details">
+                        <div class="detail">
+                            <span class="label">Account Holder Name:</span>
+                            <span class="value">Muhammad Zain Ul Abidin</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Account Number:</span>
+                            <span class="value">03067273186</span>
+                        </div>
+                        <div class="detail">
+                            <span class="label">Bank Name:</span>
+                            <span class="value">Nayapay, JazzCash, Sadapay</span>
+                        </div>
+                    </div>
+                    <div class="bank-logos">
+                        <img src="../../assets/images/jazz.png" alt="pic">
+                        <img src="../../assets/images/images.jpeg" alt="pic">
+                        <img src="../../assets/images/images.png" alt="pic">
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Thank you for your prompt payment!</p>
+            </div>
+           
+        </div>
+    </body> 
+</div>
+
+<div class="invoice-footer" *ngIf="invoiceGenerated">
+    <button (click)="confirm()" class="mx-2">Download Invoice (PDF)</button>
+    <button (click)="editDetails()">Edit Details</button>
+    <button (click)="reminder(user.name,user.email,payment.amountDue,payment.lastDate)">Tesing</button>
+</div>  
+
+
+ <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': showModal}" [ngStyle]="{'display': showModal ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmation</h5>
+          <!-- <button type="button" class="close" (click)="closeConfirmationModal()">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+          <!-- <ng-container >
+            
+          </ng-container> -->
+          <div class="cross-icon" (click)="closeConfirmationModal()">
+            <span><i class="fas fa-times-circle"></i></span>
+          </div>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to download the invoice?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="confirmDownload('yes')">Yes</button>
+          <button type="button" class="btn btn-secondary" (click)="confirmDownload('no')">No</button>
+        </div>
+      </div>
+    </div>
+  </div> -
+
+
+
+ 

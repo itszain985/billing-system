@@ -1,0 +1,10 @@
+.my-form{
+    width: 30%;
+    margin: auto;
+    border: 1px solid;
+    margin-top: 40px;
+    background-color: rgb(243, 255, 255);
+}
+.main{
+    background-color: rgb(243, 255, 255);
+}

@@ -1,0 +1,364 @@
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin: auto;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    border-radius: 8px;
+}
+.banner {
+    /* background-color: #4CAF50; */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-section, .output-section {
+    width: 48%;
+}
+.input-section h2, .output-section h2 {
+    margin-top: 0;
+}
+.user-details, .payment-details {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.user-details label, .payment-details label {
+    display: block;
+    margin-bottom: 10px;
+}
+.user-details input, .payment-details input {
+    width: calc(100% - 22px);
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.user-profile {
+    margin-bottom: 10px;
+}
+.user-profile img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+}
+.invoice {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.invoice-header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.invoice-header .invoice-details {
+    text-align: right;
+}
+.invoice-header .invoice-details h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.invoice-body {
+    margin-bottom: 20px;
+}
+.invoice-body h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.invoice-footer {
+    text-align: center;
+}
+.invoice-footer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.invoice-footer button:hover {
+    background-color: #45a049;
+}
+.footer {
+    text-align: center;
+    padding: 10px;
+    color: #888;
+    font-size: 0.9em;
+}
+
+
+.user-details img{
+    width: 124px;
+    border-radius: 50%;
+    height: 117px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+.banner {
+    /* background-color: #4CAF50; */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    margin: 28px 4px 9px 10px;
+    position: absolute;
+    right: 420px;
+    top: 100px;
+    
+}
+.profile img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+.profile div {
+    font-size: 1.2em;
+}
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.details div {
+    width: 100%;
+}
+.details h2 {
+    margin-top: 0;
+}
+.payment-details, .user-details {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+}
+.payment-details table, .user-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.payment-details th, .payment-details td, .user-details th, .user-details td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.late-payment {
+    background-color: #ffdddd;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.late-payment table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.late-payment th, .late-payment td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.footer {
+    text-align: center;
+    padding: 10px;
+    color: #888;
+    font-size: 0.9em;
+}
+.profile img{
+    object-fit: scale-down;
+    height: 151px;
+    width: 140px;
+}
+.late-payment i{
+    font-size: 26px;
+    color: rgb(255, 0, 0);
+    margin-left: 8px;
+    /* margin-bottom: 6px; */
+    padding: 6px 2px;
+}
+
+/* .bank-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border-top: 2px solid #005b9f;
+    border-bottom: 2px solid #005b9f;
+}
+.bank-logos img {
+    max-height: 60px;
+    max-width: 100px;
+  
+} */
+
+.body-content{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f5;
+}
+
+
+.account-info {
+    /* width: 80%; */
+    margin: 20px auto;
+    padding: 20px;
+    /* background: linear-gradient(135deg, #f3f3f3 25%, #ffffff 75%); */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.account-header {
+    background-color: #005b9f;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+}
+
+.account-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.detail {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+.value {
+    color: #555;
+}
+
+.bank-logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 2px solid #005b9f;
+    border-bottom: 2px solid #005b9f;
+    border-radius: 0 0 8px 8px;
+}
+
+.bank-logos img {
+    max-height: 60px;
+    max-width: 100px;
+    transition: transform 0.3s ease;
+}
+
+
+
+.banner  img {
+    width: 100%;
+}
+
+
+.jugad{
+    background-color: #134F9D;
+    width: 43%;
+    height: 188px;
+    position: absolute;
+    right: 1px;
+    top: 13px;
+}
+
+
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  
+  .modal-dialog {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .modal-header{
+    justify-content: space-between;
+  }
+
+
+  .cross-icon{
+    cursor: pointer;
+  }
+  .cross-icon i{
+    font-size: 19px;
+  }
+  .cross-icon i:hover{
+    color: #0d6efd;
+  }
+ 

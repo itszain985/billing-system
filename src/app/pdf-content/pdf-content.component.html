@@ -1,0 +1,74 @@
+<div id="pdf-content">
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXop8DXHkFdfBBohe8salmjnMCZLpxrTadVEKppX0DtA7xEVV2_F5zobu-Wi3eepLgzs&usqp=CAU" alt=""> -->
+    <input type="file" id="profileImage" accept="image/*" (change)="onImageSelected($event)">
+    
+    <h1>My PDF Content</h1>
+    <p>This is the content that will be converted to a PDF.</p>
+    <img class="piv" *ngIf="user.profileImageUrl" [src]="user.profileImageUrl" alt="Customer Image">
+    <p>Lorem it sequi enim quasi necd iidem, culpa est. Accusamus reprehenderit maiores, rerum est inventore impedit suscipit
+         quod fugiat earum ad adipisci, iusto tempore perspiciatis quasi distinctio
+          numquam placeat repellat non laborum.</p>
+  </div>
+  <button (click)="downloadPDF()">Download PDF</button>
+
+
+  <body>
+ 
+    <div class="invoice">
+      <div class="invoice-header">
+        <div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXop8DXHkFdfBBohe8salmjnMCZLpxrTadVEKppX0DtA7xEVV2_F5zobu-Wi3eepLgzs&usqp=CAU" alt="Profile Picture">
+          <h2>{{rececivedDataFromService.userName}}</h2>
+        </div>
+        <div>
+          <!-- <h2>Company Name</h2> -->
+           <h2>{{rececivedDataFromService.company}}</h2>
+          <!-- <p>Date: January 1, 2024</p> -->
+           <p>Date: {{rececivedDataFromService.dateInfo}}</p>
+           <!-- <input type="date"> -->
+           <!-- <p>Date: {{currentTime}}</p> -->
+        </div>
+      </div>
+      
+      <div class="invoice-info">
+        <div class="info-left">
+          <p>Last Date: {{rececivedDataFromService.lastDate}}</p>
+          <p>Bill Category: Internet</p>
+          <p>Bill Payment: Paid</p>
+        </div>
+        <div class="info-right">
+          <p>Payable Amount After Due Date: $500</p>
+        </div>
+      </div>
+      
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Service 1</td>
+            <td>2</td>
+            <td>$100</td>
+            <td>$200</td>
+          </tr>
+          <tr>
+            <td>Service 2</td>
+            <td>1</td>
+            <td>$300</td>
+            <td>$300</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="total">
+        <span>Total: <span class="total-amount">$500</span></span>
+      </div>
+    </div>
+    
+    </body>
